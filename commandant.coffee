@@ -286,7 +286,8 @@ class Commandant
     cmds = @_compound
     @_compound = null
 
-    @_push({ name: '__compound', data: cmds })
+    if cmds && cmds.length > 0
+      @_push({ name: '__compound', data: cmds })
     return
 
   cancelCompound: ->
